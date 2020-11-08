@@ -134,8 +134,10 @@ def dumps(host='localhost', port=6379, password=None, db=0, pretty=False,
     for key, type, ttl, value in _reader(r, pretty, encoding, keys):
         table[key] = subd = {'type': type, 'value': value}
         if ttl is not None:
-            subd['ttl'] = ttl
-            subd['expireat'] = _time.time() + ttl
+            #skip ttl dute to redis 3.X incompatibility            
+            #subd['ttl'] = ttl
+            #subd['expireat'] = _time.time() + ttl
+            pass
     return encoder.encode(table)
 
 class BytesWriteWrapper(object):
