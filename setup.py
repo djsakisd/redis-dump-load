@@ -4,7 +4,7 @@ import os.path
 from distutils.core import setup
 
 package_name = 'redis-dump-load'
-package_version = '1.1'
+package_version = '1.2'
 
 doc_dir = os.path.join('share', 'doc', package_name)
 
